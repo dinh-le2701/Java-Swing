@@ -3,6 +3,8 @@ package tuan02.bai01;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,7 +16,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class QLNV_Gui extends JFrame{
+public class QLNV_Gui extends JFrame implements ActionListener{
 	
 	JPanel pn, pc, ps;
 	JTextField txtManv, txtHo, txtTennv, txtTuoi, txtTienluong;
@@ -56,25 +58,30 @@ public class QLNV_Gui extends JFrame{
 		lTienluong = new JLabel("Tiền lương: ");
 		txtTienluong = new JTextField(30);
 		
-		String[] colnames = {"Mã nhân viên", "Họ", "Tên", "Phái", "Tuổi", "Tiền lương"};
+//		String[] colnames = {"Mã nhân viên", "Họ", "Tên", "Phái", "Tuổi", "Tiền lương"};
 //		Object[][] data = {
 //				{"123", "3", "3", "4", "4", "6"}
 //		};
 		
-		DefaultTableModel model = new DefaultTableModel(colnames, 0);
+		String data[][] = { { "101", "Tran Van Minh", "6000" }, 
+                { "102", "Phan Van Tai", "8000" }, 
+                { "101", "Do Cao Hoc", "7000" } };
+        String column[] = { "ID", "NAME", "SALARY" };
+		
+		// DefaultTableModel model = new DefaultTableModel(colnames, 0);
 		
 
-		table = new JTable(model);
+		table = new JTable(data, column);
 		jc = new JScrollPane(table);
-		table.setBounds(30, 40, 200, 200);
+		table.setBounds(2000, 200, 200, 200);
 		
 		// add component to panel
-		pc.add(lManv); pc.add(txtManv);
-		pc.add(lHo); pc.add(txtHo);
-		pc.add(lTennv); pc.add(txtTennv);
-		pc.add(lTuoi); pc.add(txtTuoi);
-		pc.add(lPhai); pc.add(rbtn);
-		pc.add(lTienluong); pc.add(txtTienluong);
+		pn.add(lManv); pn.add(txtManv);
+		pn.add(lHo); pn.add(txtHo);
+		pn.add(lTennv); pn.add(txtTennv);
+		pn.add(lTuoi); pn.add(txtTuoi);
+		pn.add(lPhai); pn.add(rbtn);
+		pn.add(lTienluong); pn.add(txtTienluong);
 		pc.add(table);
 		pc.add(jc);
 		
@@ -89,6 +96,14 @@ public class QLNV_Gui extends JFrame{
 		setVisible(true);
 	}
 	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	// main method
 	public static void main(String[] args) {
 		new QLNV_Gui();
 	}
