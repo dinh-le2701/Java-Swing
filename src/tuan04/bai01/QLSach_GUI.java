@@ -153,22 +153,22 @@ public class QLSach_GUI extends JFrame implements ActionListener{
 		setSize(800, 500);
 	}
 	
-	// validate data function before add book
-//	private boolean validateData() {
-//		String maSach = TmaSach.getText().trim();
-//		String tuaSach = TtuaSach.getText().trim(); 
-//		String namXB = TnamXB.getText().trim(); 
-//		String soTrang = TsoTrang.getText().trim(); 
-//		String tacGia = TtacGia.getText().trim(); 
-//		String nhaXB = TnhaXB.getText().trim(); 
-//		String donGia = TdonGia.getText().trim(); 
-//		String ISBN = TISBN.getText().trim();
-//		
-//		if() {
-//			
-//			return false;
-//		}
-//	}
+	 validate data function before add book
+	private boolean validateData() {
+		String maSach = TmaSach.getText().trim();
+		String tuaSach = TtuaSach.getText().trim(); 
+		String namXB = TnamXB.getText().trim(); 
+		String soTrang = TsoTrang.getText().trim(); 
+		String tacGia = TtacGia.getText().trim(); 
+		String nhaXB = TnhaXB.getText().trim(); 
+		String donGia = TdonGia.getText().trim(); 
+		String ISBN = TISBN.getText().trim();
+		
+		if() {
+			
+			return false;
+		}
+	}
 	
 	// main function for program
 	public static void main(String[] args) {
